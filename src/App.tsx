@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Tabs, Tab, AppBar, Toolbar, makeStyles, Button } from '@material-ui/core';
+import { Box, AppBar, Toolbar, makeStyles, Button } from '@material-ui/core';
 import Home from '@klkarpenko/mf-home';
+import RandomJokes from '@klkarpenko/mf-random-jokes';
 import { withRouter } from "react-router";
 import cx from "classnames";
 import {
@@ -34,13 +35,9 @@ const menuItems: IMenuItem[] = [
     label: 'Home'
   },
   {
-    link: '/users',
-    label: 'Users'
-  },
-  {
-    link: '/about',
-    label: 'About'
-  },
+    link: '/random_jokes',
+    label: 'Random Jokes'
+  }
 ]
 
 function App({ location }: { location: any }) {
@@ -58,13 +55,9 @@ function App({ location }: { location: any }) {
       </AppBar>
       <Box m={2}>
         <Switch>
-          {/*<Home />*/}
-          {/*<Route path="/about">*/}
-          {/*  <About />*/}
-          {/*</Route>*/}
-          {/*<Route path="/users">*/}
-          {/*  <Users />*/}
-          {/*</Route>*/}
+          <Route path="/random_jokes">
+            <RandomJokes />
+          </Route>
           <Route path="/home" exact>
             <Home />
           </Route>
