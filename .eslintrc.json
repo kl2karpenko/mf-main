@@ -1,0 +1,21 @@
+{
+  "extends": "eslint-config-airbnb",
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-inferrable-types": "off", // Currently breaks build
+    "@typescript-eslint/no-empty-function": "off",
+    "react/require-default-props": "warn", // Warn for now
+    "no-undef": "warn" // warn for now
+  },
+  "overrides": [
+    {
+      "files": [ "**/*.test.ts", "**/*.test.tsx" ]
+    }
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.lint.json"
+  }
+}
