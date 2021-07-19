@@ -46,10 +46,10 @@ function App({ location }: { location: any }) {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" data-test="app-bar">
         <Toolbar>
           {menuItems.map((item: IMenuItem) => (
-            <Button component={Link} to={item.link} className={cx(cls.menuItem, pathname === item.link && cls.menuItemSelected)}>{item.label}</Button>
+            <Button component={Link} to={item.link} key={item.link} className={cx(cls.menuItem, pathname === item.link && cls.menuItemSelected)}>{item.label}</Button>
           ))}
         </Toolbar>
       </AppBar>
