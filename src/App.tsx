@@ -49,17 +49,29 @@ function App({ location }: { location: any }) {
       <AppBar position="static" data-test="app-bar">
         <Toolbar>
           {menuItems.map((item: IMenuItem) => (
-            <Button component={Link} to={item.link} key={item.link} className={cx(cls.menuItem, pathname === item.link && cls.menuItemSelected)}>{item.label}</Button>
+            <Button
+              component={Link}
+              to={item.link}
+              data-test={`link-to-${item.link.replace('/','')}`}
+              key={item.link}
+              className={cx(cls.menuItem, pathname === item.link && cls.menuItemSelected)}
+            >
+              {item.label}
+            </Button>
           ))}
         </Toolbar>
       </AppBar>
       <Box m={2}>
         <Switch>
           <Route path="/random_jokes">
-            <RandomJokes />
+            <Box data-test="random-jokes-app">
+              <RandomJokes />
+            </Box>
           </Route>
           <Route path="/home" exact>
-            <Home />
+            <Box data-test="home-app">
+              <Home />
+            </Box>
           </Route>
         </Switch>
       </Box>
